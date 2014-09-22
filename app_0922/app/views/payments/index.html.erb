@@ -1,0 +1,61 @@
+<h1>Listing payments</h1>
+
+<div id="quick_payment">
+  <%= link_to "Show Quick Payment Form", new_payment_path %>
+  
+  <%= form_for(@payment) do |f| %>
+    <% if @payment.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@payment.errors.count, "error") %> prohibited this payment from being saved:</h2>
+
+        <ul>
+        <% @payment.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :from %><br />
+      <%= f.text_field :from %>
+    </div>
+    <div class="field">
+      <%= f.label :to %><br />
+      <%= f.text_field :to %>
+    </div>
+    <div class="field">
+      <%= f.label :amount %><br />
+      <%= f.number_field :amount %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>
+
+<table>
+  <tr>
+    <th>From</th>
+    <th>To</th>
+    <th>Amount</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @payments.each do |payment| %>
+  <tr>
+    <td><%= payment.from %></td>
+    <td><%= payment.to %></td>
+    <td><%= payment.amount %></td>
+    <td><%= link_to 'Show', payment %></td>
+    <td><%= link_to 'Edit', edit_payment_path(payment) %></td>
+    <td><%= link_to 'Destroy', payment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Payment', new_payment_path %>
