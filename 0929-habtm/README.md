@@ -1,0 +1,3 @@
+- Seed the database with at least 5 `Tag`s and at least 3 `Product`s.
+- Build a form for a `Product` to be given one or more `Tag`s.
+- Make sure the form allows `Tag`s to be removed from a `Product`.
