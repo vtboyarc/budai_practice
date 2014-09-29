@@ -1,0 +1,53 @@
+%cf{
+  &:before, &:after{
+    content: " ";
+    display: table;
+  }
+  &:after{
+    clear: both;
+  }
+}
+
+%fake-ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#gallery{
+  @extend %cf;
+  width: 960px;
+  margin: 0 auto;
+}
+
+#groups{
+  @extend %fake-ul;
+  float: left;
+  width: 30%;
+}
+
+.group{
+  padding: 5px;
+  border: 1px solid #666;
+  display: inline-block;
+}
+
+#users{
+  @extend %fake-ul;
+  @extend %cf;
+  float: right;
+  width: 65%;
+}
+
+.user{
+  float: left;
+  width: 22%;
+  background: #ddd;
+  padding: 5% 1%;
+  margin: 0 1% 1% 0;
+  text-align: center;
+  font-weight: bold;
+}
+.user_group{
+  font-weight: normal;
+}

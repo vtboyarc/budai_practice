@@ -1,0 +1,5 @@
+1. When you click on a group name, it should show only those users who belong to that group. This *must not* require a page reload. (It also does not require AJAX.)
+2. Add a class of `"selected"` to a group when it is clicked. Then add some CSS for `.selected`, so that we can tell when the `"selected"` class is added to the group. Make sure the class is removed/added appropriately when a different group is clicked.
+3. The page currently tries to run several SQL queries. Optimize the ActiveRecord lookup.
+  - Did you user `includes` or `joins`? If you got it working, now get it working with the other approach.
+4. The links currently point to `"#"`, which means the site does not degrade gracefully if JavaScript is disabled. Improve the code so that the site will also work without JavaScript. (You will need to add a view to show the users in a group.)

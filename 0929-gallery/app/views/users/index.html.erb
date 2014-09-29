@@ -1,0 +1,16 @@
+<div id="gallery">
+  <ul id="groups">
+    <% @groups.each do |g| %>
+      <li class="group"><a href="#"><%= g.title %></a></li>
+    <% end %>
+  </ul>
+  
+  <ul id="users">
+    <% @users.each do |u| %>
+      <li class="user">
+        <%= u.name %>
+        <div class="user_group"><%= u.group.title %></div>
+      </li>
+    <% end %>
+  </ul>
+</div>
